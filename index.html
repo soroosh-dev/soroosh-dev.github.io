@@ -15,8 +15,11 @@
             board.innerHTML = board.innerHTML + urlParams;
             board.innerHTML = board.innerHTML + "<br/>";
             board.innerHTML = board.innerHTML + window.Telegram.WebApp.initData;
-            let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
+	    board.innerHTML = board.innerHTML + "<br/>";
+	    board.innerHTML = board.innerHTML + "Startparam: ";
+	    let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
 	    board.innerHTML = board.innerHTML + startParam;
+	    board.innerHTML = board.innerHTML + "<br/>";
 	    board.innerHTML = board.innerHTML + window.Telegram.WebApp.initDataUnsafe;
 	    console.log("DONE");
         </script>
