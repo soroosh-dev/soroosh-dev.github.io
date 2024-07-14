@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <title>POC App</title>
+    </head>
+    <body>
+        <h1>Hi there!</h1>
+        <p id='mainp'>
+
+        </p>
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            board = document.getElementById("mainp");
+            board.innerHTML = "query params: ";
+            board.innerHTML = board.innerHTML + urlParams;
+            board.innerHTML = board.innerHTML + "<br/>";
+        </script>
+    </body>
+</html>
