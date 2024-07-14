@@ -20,7 +20,8 @@
 	    let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
 	    board.innerHTML = board.innerHTML + startParam;
 	    board.innerHTML = board.innerHTML + "<br/>";
-	    board.innerHTML = board.innerHTML + window.Telegram.WebApp.initDataUnsafe;
+	    board.innerHTML = board.innerHTML + JSON.stringify(window.Telegram.WebApp.initDataUnsafe);
+	    console.log(JSON.stringify(window.Telegram.WebApp.initDataUnsafe));
 	    console.log("DONE");
         </script>
     </body>
