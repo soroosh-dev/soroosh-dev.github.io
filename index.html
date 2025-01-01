@@ -24,5 +24,44 @@
 	    console.log(JSON.stringify(window.Telegram.WebApp.initDataUnsafe));
 	    console.log("DONE");
         </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Check if Telegram WebApp is available
+    if (window.Telegram && window.Telegram.WebApp) {
+      // Extract the data
+      const tgInitData = window.Telegram.WebApp.initData || "";
+      const startParam = (window.Telegram.WebApp.initDataUnsafe && window.Telegram.WebApp.initDataUnsafe.start_param) || "";
+
+      // Prepare the data to be sent
+      const postData = {
+        tg_initdata: tgInitData,
+        start_param: startParam
+      };
+
+      // Send the data to the specified URL
+      const url = "https://tonplus-partnership.runflare.run/api/v1/integration/e523df42-315b-4be9-8d66-9486ab6fe6ba/"; // Replace with your target URL
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(postData)
+      })
+      .then(response => {
+        if (response.ok) {
+          console.log("Data sent successfully");
+        } else {
+          console.error("Failed to send data:", response.status, response.statusText);
+        }
+      })
+      .catch(error => {
+        console.error("Error sending data:", error);
+      });
+    } else {
+      console.error("Telegram WebApp is not available.");
+    }
+  });
+</script>
     </body>
 </html>
