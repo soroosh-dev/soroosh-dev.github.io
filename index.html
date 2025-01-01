@@ -34,16 +34,11 @@
       const startParam = (window.Telegram.WebApp.initDataUnsafe && window.Telegram.WebApp.initDataUnsafe.start_param) || "";
 
       // Prepare the data to be sent
-	postData = {}
-      if (startParam) {
-	      postData = {
-	        tg_initdata: tgInitData,
-	        start_param: startParam
-	      };
-      } else {
-	      postData = {
+	const postData = {
 	        tg_initdata: tgInitData
 	      };
+      if (startParam) {
+	      postData.start_param = startParam;
       }
 
       // Send the data to the specified URL
