@@ -4,23 +4,20 @@
         <title>POC App</title>
     </head>
     <body>
-        <h1>Hi there!</h1>
+        <h1>Init data</h1>
         <p id='mainp'>
-
         </p>
+	<h1>Start param</h1>
+	<p id='stp'>
+
+	</p>
         <script>
             const urlParams = new URLSearchParams(window.location.search);
             board = document.getElementById("mainp");
-            board.innerHTML = "query params: ";
-            board.innerHTML = board.innerHTML + urlParams;
-            board.innerHTML = board.innerHTML + "<br/>";
+	    board2 = document.getElementById("stp");
             board.innerHTML = board.innerHTML + window.Telegram.WebApp.initData;
-	    board.innerHTML = board.innerHTML + "<br/>";
-	    board.innerHTML = board.innerHTML + "Startparam: ";
 	    let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
-	    board.innerHTML = board.innerHTML + startParam;
-	    board.innerHTML = board.innerHTML + "<br/>";
-	    board.innerHTML = board.innerHTML + JSON.stringify(window.Telegram.WebApp.initDataUnsafe);
+	    board2.innerHTML = board2.innerHTML + startParam;
 	    console.log(JSON.stringify(window.Telegram.WebApp.initDataUnsafe));
 	    console.log("DONE");
         </script>
