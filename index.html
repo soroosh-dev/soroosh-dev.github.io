@@ -1,9 +1,20 @@
 <html>
     <head>
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/TONSolutions/telemetree-pixel@main/telemetree-pixel.js"></script>
+
         <title>POC App</title>
     </head>
     <body>
+	<script>
+	    const telemetreeBuilder = telemetree({
+	        projectId: "99bb5f25-b25a-43c8-80c8-c32c0b07aef0",
+	        apiKey: "4929f728-f93c-4b5e-8f53-fb8be65a84cf",
+	        appName: "TestProject",
+	        isTelegramContext: true, // use false, if a website is not in Telegram Web App context
+	    });
+	</script>
+
         <h1>Init data</h1>
         <p id='mainp'>
         </p>
